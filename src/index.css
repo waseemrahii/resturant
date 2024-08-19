@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Home Page */
+.btn{
+    color: white;
+    padding: 4px 16px;
+    background: #CC3838;
+    border: 1px solid #CC3838 ;
+    border-radius: 8px;
+}
+.btn:hover {
+    background: #D66060;
+}
