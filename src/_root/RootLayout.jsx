@@ -19,10 +19,10 @@ const RootLayout = () => {
   return (
     <>
       {/* Render LandingPage if location is not set, otherwise show the main content */}
-      {!locationSet && location.pathname === "/" ? (
+      {/* {!locationSet && location.pathname === "/" ? (
         <LandingPage onLocationSet={handleLocationSet} />
-      ) : (
-        <>
+      ) : ( */}
+        
           <div className="flex flex-col min-h-screen">
             <Header />
             <main className="flex-grow">
@@ -33,8 +33,8 @@ const RootLayout = () => {
             </main>
             <Footer />
           </div>
-        </>
-      )}
+      
+    
     </>
   );
 };

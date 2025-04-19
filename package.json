@@ -22,7 +22,8 @@
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.25.1",
     "react-step-progress-bar": "^1.0.3",
-    "stories-react": "^1.1.2"
+    "stories-react": "^1.1.2",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
