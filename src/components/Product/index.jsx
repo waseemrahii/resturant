@@ -37,7 +37,7 @@ const ProductDetail = () => {
               <h1>kjhdskjh</h1>
             </div>
           </div>
-          <div className="flex flex-col w-[30%]">
+          <div className="flex flex-wrapp gap-6 w-full ">
             <ShoppingDetail />
             <SellerInfo />
             <Moreformrestraurant />
