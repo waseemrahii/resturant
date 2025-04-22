@@ -41,7 +41,7 @@ const CheckoutPage = () => {
       {
         id: 1,
         type: "Home",
-        name: "Aqib Ahmed",
+        name: "Sayed Ahmed",
         address: "Soan heights2, street 25, Block B, Islamabad, Islamabad Capital Territory, Pakistan",
         phone: "+923161887004",
         isDefault: true,
@@ -49,7 +49,7 @@ const CheckoutPage = () => {
       {
         id: 2,
         type: "Work",
-        name: "Aqib Ahmed",
+        name: "Faisal",
         address: "Soan Garden, soan heights 2, Street 25, Block B, Islamabad, Islamabad Capital Territory, Pakistan",
         phone: "+923161887004",
         isDefault: false,
