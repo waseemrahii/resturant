@@ -137,286 +137,6 @@
 
 // // export default SignUp;
 
-// "use client"
-// import { useState } from "react"
-// import { useForm, Controller } from "react-hook-form"
-// import {
-//   FaUser,
-//   FaEnvelope,
-//   FaLock,
-//   FaEye,
-//   FaEyeSlash,
-//   FaPhoneAlt,
-//   FaGift,
-//   FaFacebookF,
-//   FaGoogle,
-// } from "react-icons/fa"
-// import PhoneInput from "react-phone-input-2"
-// import "react-phone-input-2/lib/style.css"
-// import { Link } from "react-router-dom"
-// import logo from "../../../public/logo-e.png"
-
-// const SignUp = () => {
-//   const [showPassword, setShowPassword] = useState(false)
-//   const {
-//     register,
-//     handleSubmit,
-//     control,
-//     formState: { errors },
-//   } = useForm()
-
-//   const onSubmit = (data) => {
-//     console.log(data)
-//   }
-
-//   return (
-//     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
-//       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
-//         <div className="bg-gradient-to-r from-accent-primary to-accent-secondary py-6 px-8">
-//           <div className="flex justify-center">
-//             <img src={logo || "/placeholder.svg"} alt="Foodie" className="h-16" />
-//           </div>
-//           <h2 className="mt-4 text-center text-3xl font-extrabold text-white">Create Account</h2>
-//           <p className="mt-2 text-center text-white text-opacity-80">Sign up to join the Foodie community</p>
-//         </div>
-
-//         <div className="p-8">
-//           <form className="space-y-5" onSubmit={handleSubmit(onSubmit)}>
-//             <div className="grid grid-cols-2 gap-4">
-//               <div>
-//                 <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
-//                   First Name
-//                 </label>
-//                 <div className="mt-1 relative rounded-md shadow-sm">
-//                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-//                     <FaUser className="h-5 w-5 text-gray-400" />
-//                   </div>
-//                   <input
-//                     id="firstName"
-//                     type="text"
-//                     {...register("firstName", { required: "First Name is required" })}
-//                     className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
-//                     placeholder="First Name"
-//                   />
-//                 </div>
-//                 {errors.firstName && <p className="mt-1 text-sm text-red-600">{errors.firstName.message}</p>}
-//               </div>
-
-//               <div>
-//                 <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
-//                   Last Name
-//                 </label>
-//                 <div className="mt-1 relative rounded-md shadow-sm">
-//                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-//                     <FaUser className="h-5 w-5 text-gray-400" />
-//                   </div>
-//                   <input
-//                     id="lastName"
-//                     type="text"
-//                     {...register("lastName", { required: "Last Name is required" })}
-//                     className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
-//                     placeholder="Last Name"
-//                   />
-//                 </div>
-//                 {errors.lastName && <p className="mt-1 text-sm text-red-600">{errors.lastName.message}</p>}
-//               </div>
-//             </div>
-
-//             <div>
-//               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-//                 Email Address
-//               </label>
-//               <div className="mt-1 relative rounded-md shadow-sm">
-//                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-//                   <FaEnvelope className="h-5 w-5 text-gray-400" />
-//                 </div>
-//                 <input
-//                   id="email"
-//                   type="email"
-//                   {...register("email", {
-//                     required: "Email is required",
-//                     pattern: {
-//                       value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-//                       message: "Invalid email address",
-//                     },
-//                   })}
-//                   className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
-//                   placeholder="Email Address"
-//                 />
-//               </div>
-//               {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
-//             </div>
-
-//             <div>
-//               <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-//                 Phone Number
-//               </label>
-//               <Controller
-//                 name="phone"
-//                 control={control}
-//                 rules={{ required: "Phone number is required" }}
-//                 render={({ field }) => (
-//                   <PhoneInput
-//                     country={"pk"}
-//                     value={field.value}
-//                     onChange={field.onChange}
-//                     inputStyle={{
-//                       width: "100%",
-//                       height: "48px",
-//                       fontSize: "16px",
-//                       borderRadius: "0.5rem",
-//                       border: "1px solid #D1D5DB",
-//                     }}
-//                     containerStyle={{
-//                       marginTop: "0.25rem",
-//                     }}
-//                     buttonStyle={{
-//                       borderTopLeftRadius: "0.5rem",
-//                       borderBottomLeftRadius: "0.5rem",
-//                       border: "1px solid #D1D5DB",
-//                     }}
-//                   />
-//                 )}
-//               />
-//               {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>}
-//             </div>
-
-//             <div>
-//               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-//                 Password
-//               </label>
-//               <div className="mt-1 relative rounded-md shadow-sm">
-//                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-//                   <FaLock className="h-5 w-5 text-gray-400" />
-//                 </div>
-//                 <input
-//                   id="password"
-//                   type={showPassword ? "text" : "password"}
-//                   {...register("password", {
-//                     required: "Password is required",
-//                     minLength: {
-//                       value: 8,
-//                       message: "Password must be at least 8 characters",
-//                     },
-//                   })}
-//                   className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
-//                   placeholder="Create Password"
-//                 />
-//                 <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-//                   <button
-//                     type="button"
-//                     onClick={() => setShowPassword(!showPassword)}
-//                     className="text-gray-400 hover:text-gray-500 focus:outline-none"
-//                   >
-//                     {showPassword ? <FaEyeSlash className="h-5 w-5" /> : <FaEye className="h-5 w-5" />}
-//                   </button>
-//                 </div>
-//               </div>
-//               {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>}
-//             </div>
-
-//             <div>
-//               <label htmlFor="referralCode" className="block text-sm font-medium text-gray-700">
-//                 Referral Code (Optional)
-//               </label>
-//               <div className="mt-1 relative rounded-md shadow-sm">
-//                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-//                   <FaGift className="h-5 w-5 text-gray-400" />
-//                 </div>
-//                 <input
-//                   id="referralCode"
-//                   type="text"
-//                   {...register("referralCode")}
-//                   className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
-//                   placeholder="Enter Referral Code"
-//                 />
-//               </div>
-//             </div>
-
-//             <div className="flex items-center">
-//               <input
-//                 id="terms"
-//                 name="terms"
-//                 type="checkbox"
-//                 {...register("terms", { required: "You must agree to the terms and conditions" })}
-//                 className="h-4 w-4 text-accent-primary focus:ring-accent-primary border-gray-300 rounded"
-//               />
-//               <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
-//                 I agree to the{" "}
-//                 <Link to="/terms" className="text-accent-primary hover:text-accent-secondary">
-//                   Terms and Conditions
-//                 </Link>
-//               </label>
-//             </div>
-//             {errors.terms && <p className="mt-1 text-sm text-red-600">{errors.terms.message}</p>}
-
-//             <div>
-//               <button
-//                 type="submit"
-//                 className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-accent-primary hover:bg-accent-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-primary transition-colors"
-//               >
-//                 Create Account
-//               </button>
-//             </div>
-//           </form>
-
-//           <div className="mt-6">
-//             <div className="relative">
-//               <div className="absolute inset-0 flex items-center">
-//                 <div className="w-full border-t border-gray-300"></div>
-//               </div>
-//               <div className="relative flex justify-center text-sm">
-//                 <span className="px-2 bg-white text-gray-500">Or sign up with</span>
-//               </div>
-//             </div>
-
-//             <div className="mt-6 grid grid-cols-2 gap-3">
-//               <button
-//                 type="button"
-//                 className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
-//               >
-//                 <FaGoogle className="h-5 w-5 text-red-500 mr-2" />
-//                 Google
-//               </button>
-//               <button
-//                 type="button"
-//                 className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
-//               >
-//                 <FaFacebookF className="h-5 w-5 text-blue-600 mr-2" />
-//                 Facebook
-//               </button>
-//             </div>
-
-//             <div className="mt-6 flex items-center justify-center">
-//               <button
-//                 type="button"
-//                 className="w-full flex justify-center items-center px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
-//               >
-//                 <FaPhoneAlt className="h-5 w-5 text-accent-primary mr-2" />
-//                 Sign Up with Phone Number
-//               </button>
-//             </div>
-//           </div>
-
-//           <div className="mt-6 text-center">
-//             <p className="text-sm text-gray-600">
-//               Already have an account?{" "}
-//               <Link to="/login" className="font-medium text-accent-primary hover:text-accent-secondary">
-//                 Sign in
-//               </Link>
-//             </p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   )
-// }
-
-// export default SignUp
-
-
-
-"use client"
 import { useState } from "react"
 import { useForm, Controller } from "react-hook-form"
 import {
@@ -429,9 +149,7 @@ import {
   FaGift,
   FaFacebookF,
   FaGoogle,
-  FaArrowLeft,
 } from "react-icons/fa"
-import { motion } from "framer-motion"
 import PhoneInput from "react-phone-input-2"
 import "react-phone-input-2/lib/style.css"
 import { Link } from "react-router-dom"
@@ -451,19 +169,14 @@ const SignUp = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden"
-      >
-        <div className="bg-gradient-to-r from-[#FF6637] to-[#FF8C66] py-6 px-8">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div className="bg-gradient-to-r from-accent-primary to-accent-secondary py-6 px-8">
           <div className="flex justify-center">
             <img src={logo || "/placeholder.svg"} alt="Foodie" className="h-16" />
           </div>
           <h2 className="mt-4 text-center text-3xl font-extrabold text-white">Create Account</h2>
-          <p className="mt-2 text-center text-white text-opacity-90">Sign up to join the Foodie community</p>
+          <p className="mt-2 text-center text-white text-opacity-80">Sign up to join the Foodie community</p>
         </div>
 
         <div className="p-8">
@@ -481,7 +194,7 @@ const SignUp = () => {
                     id="firstName"
                     type="text"
                     {...register("firstName", { required: "First Name is required" })}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-[#FF6637] focus:border-[#FF6637] transition-colors"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
                     placeholder="First Name"
                   />
                 </div>
@@ -500,7 +213,7 @@ const SignUp = () => {
                     id="lastName"
                     type="text"
                     {...register("lastName", { required: "Last Name is required" })}
-                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-[#FF6637] focus:border-[#FF6637] transition-colors"
+                    className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
                     placeholder="Last Name"
                   />
                 </div>
@@ -526,7 +239,7 @@ const SignUp = () => {
                       message: "Invalid email address",
                     },
                   })}
-                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-[#FF6637] focus:border-[#FF6637] transition-colors"
+                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
                   placeholder="Email Address"
                 />
               </div>
@@ -585,7 +298,7 @@ const SignUp = () => {
                       message: "Password must be at least 8 characters",
                     },
                   })}
-                  className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-[#FF6637] focus:border-[#FF6637] transition-colors"
+                  className="block w-full pl-10 pr-10 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
                   placeholder="Create Password"
                 />
                 <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
@@ -613,7 +326,7 @@ const SignUp = () => {
                   id="referralCode"
                   type="text"
                   {...register("referralCode")}
-                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-[#FF6637] focus:border-[#FF6637] transition-colors"
+                  className="block w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-accent-primary focus:border-accent-primary transition-colors"
                   placeholder="Enter Referral Code"
                 />
               </div>
@@ -625,11 +338,11 @@ const SignUp = () => {
                 name="terms"
                 type="checkbox"
                 {...register("terms", { required: "You must agree to the terms and conditions" })}
-                className="h-4 w-4 text-[#FF6637] focus:ring-[#FF6637] border-gray-300 rounded"
+                className="h-4 w-4 text-accent-primary focus:ring-accent-primary border-gray-300 rounded"
               />
               <label htmlFor="terms" className="ml-2 block text-sm text-gray-700">
                 I agree to the{" "}
-                <Link to="/terms" className="text-[#FF6637] hover:text-[#FF8C66]">
+                <Link to="/terms" className="text-accent-primary hover:text-accent-secondary">
                   Terms and Conditions
                 </Link>
               </label>
@@ -637,14 +350,12 @@ const SignUp = () => {
             {errors.terms && <p className="mt-1 text-sm text-red-600">{errors.terms.message}</p>}
 
             <div>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <button
                 type="submit"
-                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-[#FF6637] hover:bg-[#FF8C66] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF6637] transition-colors"
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-base font-medium text-white bg-accent-primary hover:bg-accent-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-primary transition-colors"
               >
                 Create Account
-              </motion.button>
+              </button>
             </div>
           </form>
 
@@ -659,54 +370,47 @@ const SignUp = () => {
             </div>
 
             <div className="mt-6 grid grid-cols-2 gap-3">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              <button
                 type="button"
                 className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
               >
                 <FaGoogle className="h-5 w-5 text-red-500 mr-2" />
                 Google
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+              </button>
+              <button
                 type="button"
                 className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
               >
                 <FaFacebookF className="h-5 w-5 text-blue-600 mr-2" />
                 Facebook
-              </motion.button>
+              </button>
             </div>
 
             <div className="mt-6 flex items-center justify-center">
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+              <button
                 type="button"
                 className="w-full flex justify-center items-center px-4 py-3 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
               >
-                <FaPhoneAlt className="h-5 w-5 text-[#FF6637] mr-2" />
+                <FaPhoneAlt className="h-5 w-5 text-accent-primary mr-2" />
                 Sign Up with Phone Number
-              </motion.button>
+              </button>
             </div>
           </div>
 
           <div className="mt-6 text-center">
             <p className="text-sm text-gray-600">
               Already have an account?{" "}
-              <Link
-                to="/login"
-                className="font-medium text-[#FF6637] hover:text-[#FF8C66] flex items-center justify-center gap-1 mt-1"
-              >
-                <FaArrowLeft className="text-xs" /> Sign in
+              <Link to="/login" className="font-medium text-accent-primary hover:text-accent-secondary">
+                Sign in
               </Link>
             </p>
           </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   )
 }
 
 export default SignUp
+
+

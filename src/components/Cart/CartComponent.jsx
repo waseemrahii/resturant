@@ -159,7 +159,6 @@
 // export default CartComponent;
 
 
-"use client"
 
 import { useState, useEffect } from "react"
 import { FaTrash, FaMinus, FaPlus, FaArrowLeft, FaShoppingBag } from "react-icons/fa"
