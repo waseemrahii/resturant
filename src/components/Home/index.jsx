@@ -52,6 +52,7 @@ import RestaurantStories from "./Stories"
 import { restaurantStories } from "../../utils/Utils"
 import PromotionalBanner from "./PromotionalBanner"
 import JoinUs from "./JoinUs"
+import BecomeASeller from "./BecomeASeller"
 
 const Home = () => {
   // Filter restaurants by category
@@ -72,6 +73,8 @@ const Home = () => {
         <ParentCard title="Popular Restaurants" rest={restaurants.slice(0, 8)} />
         <PromotionalBanner />
         <NewArrivals title="New on Foodie" />
+          {/* Become a Seller Banner */}
+          <BecomeASeller />
         <ParentCard title="Pakistani Cuisine" rest={pakistaniRestaurants} />
         <ParentCard title="BBQ Delights" rest={bbqRestaurants} />
         <ParentCard title="Biryani Specials" rest={biryaniRestaurants} />

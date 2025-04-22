@@ -348,6 +348,7 @@ import AllRestaurants from "./components/Restaurants/AllRestaurants";
 import RequestDineIn from "./components/Restaurants/RequestDineIn";
  import Restaurants from "./components/Restaurants";
 import CategoryPage from "./_root/Pages/CategoryPage";
+import VendorRegistration from "./_root/Pages/VendorRegistration";
 
 const router = createBrowserRouter([
   {
@@ -476,6 +477,10 @@ const router = createBrowserRouter([
       {
         path: "order/:id",
         element: <OrderDetailPage />,
+      },
+      {
+        path: "vendor-registration",
+        element: <VendorRegistration />,
       },
       {
         path: "*",
