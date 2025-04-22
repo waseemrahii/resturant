@@ -277,7 +277,7 @@ const CategoryPage = () => {
         {isFood
           ? // Render food items
             items.map((food, index) => (
-              <Link key={index} to={`/product-detail/${food.id || index}`}>
+              <Link key={index} to={`/product-detail`}>
                 <FoodCard
                   img={food.img}
                   name={food.name}

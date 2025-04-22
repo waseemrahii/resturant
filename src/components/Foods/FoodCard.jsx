@@ -1,6 +1,6 @@
 // // // // src/FoodCard.js
 // // // import PropTypes from 'prop-types';
-// // // import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // // // // import { FaStar } from 'react-icons/fa';
 
 // // // const FoodCard = ({ img, name, price, originalPrice, rating,reviews, isVeg,  }) => {
@@ -253,6 +253,8 @@ import { FaStar, FaHeart, FaRegHeart, FaShoppingCart, FaCheck } from "react-icon
 import { motion } from "framer-motion"
 import PropTypes from "prop-types"
 import { toast, ToastContainer } from "react-toastify"
+import { Link } from 'react-router-dom';
+
 import "react-toastify/dist/ReactToastify.css"
 
 const FoodCard = ({ img, name, price, originalPrice, rating, reviews, isVeg, id }) => {
@@ -343,6 +345,8 @@ const FoodCard = ({ img, name, price, originalPrice, rating, reviews, isVeg, id 
   }
 
   return (
+    <Link to="/product-detail">
+
     <motion.div
       whileHover={{ y: -5 }}
       className="border rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 bg-white h-full relative group"
@@ -424,6 +428,8 @@ const FoodCard = ({ img, name, price, originalPrice, rating, reviews, isVeg, id 
       </div>
       <ToastContainer />
     </motion.div>
+
+    </Link>
   )
 }
 
