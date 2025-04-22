@@ -6,7 +6,7 @@ const CouponsList = ({ coupons = couponsdata }) => {
   return (
     <>
       <div className="pt-5">
-        <h1 className="px-6 flex items-center rounded bg-primary-900 h-32 w-full text-white font-bold text-[1.6rem]">
+        <h1 className="px-6 flex items-center rounded bg-primary-500 h-32 w-full text-white font-bold text-[1.6rem]">
           Coupons list
         </h1>
       </div>

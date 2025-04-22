@@ -152,7 +152,7 @@ const RestaurantStories = ({ restaurants }) => {
     <div className="py-10 bg-gradient-to-r from-gray-900 to-gray-800 relative">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 text-center">
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-red-500 to-yellow-500">
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-yellow-500">
             Featured Stories
           </span>
         </h2>

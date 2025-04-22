@@ -118,7 +118,7 @@
 //   if (isLoading) {
 //     return (
 //       <div className="flex items-center justify-center min-h-screen">
-//         <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-500"></div>
+//         <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary-500"></div>
 //       </div>
 //     )
 //   }
@@ -141,9 +141,9 @@
 //           {/* Sidebar */}
 //           <div className="lg:w-1/4">
 //             <div className="bg-white rounded-xl shadow-md overflow-hidden">
-//               <div className="p-6 bg-red-500 text-white">
+//               <div className="p-6 bg-primary-500 text-white">
 //                 <div className="flex items-center">
-//                   <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-red-500 font-bold text-xl">
+//                   <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-primary-500 font-bold text-xl">
 //                     {userData.firstName.charAt(0)}
 //                     {userData.lastName.charAt(0)}
 //                   </div>
@@ -164,7 +164,7 @@
 //                       whileHover={{ x: 5 }}
 //                       onClick={() => setActiveTab(tab.id)}
 //                       className={`w-full flex items-center p-3 rounded-lg transition-colors ${
-//                         activeTab === tab.id ? "bg-red-50 text-red-500 font-medium" : "text-gray-700 hover:bg-gray-100"
+//                         activeTab === tab.id ? "bg-red-50 text-primary-500 font-medium" : "text-gray-700 hover:bg-gray-100"
 //                       }`}
 //                     >
 //                       <span className="mr-3">{tab.icon}</span>
@@ -176,7 +176,7 @@
 //                     whileHover={{ x: 5 }}
 //                     className="w-full flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors mt-4"
 //                   >
-//                     <span className="mr-3 text-red-500">
+//                     <span className="mr-3 text-primary-500">
 //                       <FaSignOutAlt />
 //                     </span>
 //                     Logout
@@ -202,7 +202,7 @@
 //                           name="firstName"
 //                           value={userData.firstName}
 //                           onChange={handleFormChange}
-//                           className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+//                           className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary-500"
 //                         />
 //                       </div>
 //                       <div>
@@ -212,7 +212,7 @@
 //                           name="lastName"
 //                           value={userData.lastName}
 //                           onChange={handleFormChange}
-//                           className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+//                           className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary-500"
 //                         />
 //                       </div>
 //                     </div>
@@ -224,7 +224,7 @@
 //                         name="email"
 //                         value={userData.email}
 //                         onChange={handleFormChange}
-//                         className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+//                         className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary-500"
 //                       />
 //                     </div>
 
@@ -235,7 +235,7 @@
 //                         name="phone"
 //                         value={userData.phone}
 //                         onChange={handleFormChange}
-//                         className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+//                         className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-primary-500"
 //                       />
 //                     </div>
 
@@ -245,7 +245,7 @@
 //                         type="file"
 //                         name="image"
 //                         onChange={handleFormChange}
-//                         className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+//                         className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
 //                       />
 //                     </div>
 
@@ -254,7 +254,7 @@
 //                         whileHover={{ scale: 1.02 }}
 //                         whileTap={{ scale: 0.98 }}
 //                         type="submit"
-//                         className="bg-red-500 text-white rounded-lg py-3 px-6 hover:bg-red-600 transition-colors"
+//                         className="bg-primary-500 text-white rounded-lg py-3 px-6 hover:bg-primary-600 transition-colors"
 //                       >
 //                         Save Changes
 //                       </motion.button>
@@ -276,7 +276,7 @@
 //                       <p className="text-gray-500 mb-6">You haven't placed any orders yet.</p>
 //                       <Link
 //                         to="/restaurants"
-//                         className="inline-block bg-red-500 text-white rounded-lg py-3 px-6 hover:bg-red-600 transition-colors"
+//                         className="inline-block bg-primary-500 text-white rounded-lg py-3 px-6 hover:bg-primary-600 transition-colors"
 //                       >
 //                         Browse Restaurants
 //                       </Link>
@@ -333,7 +333,7 @@
 
 //                             <div className="flex justify-between pt-4 border-t border-gray-200">
 //                               <span className="font-bold">Total</span>
-//                               <span className="font-bold text-red-500">Rs. {order.total}</span>
+//                               <span className="font-bold text-primary-500">Rs. {order.total}</span>
 //                             </div>
 //                           </div>
 
@@ -341,14 +341,14 @@
 //                             <motion.button
 //                               whileHover={{ scale: 1.02 }}
 //                               whileTap={{ scale: 0.98 }}
-//                               className="px-4 py-2 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition-colors"
+//                               className="px-4 py-2 border border-primary-500 text-primary-500 rounded-lg hover:bg-red-50 transition-colors"
 //                             >
 //                               View Details
 //                             </motion.button>
 //                             <motion.button
 //                               whileHover={{ scale: 1.02 }}
 //                               whileTap={{ scale: 0.98 }}
-//                               className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+//                               className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
 //                             >
 //                               Reorder
 //                             </motion.button>
@@ -373,7 +373,7 @@
 //                       <p className="text-gray-500 mb-6">Add items to your wishlist to save them for later.</p>
 //                       <Link
 //                         to="/restaurants"
-//                         className="inline-block bg-red-500 text-white rounded-lg py-3 px-6 hover:bg-red-600 transition-colors"
+//                         className="inline-block bg-primary-500 text-white rounded-lg py-3 px-6 hover:bg-primary-600 transition-colors"
 //                       >
 //                         Browse Restaurants
 //                       </Link>
@@ -397,14 +397,14 @@
 //                           <div className="p-4">
 //                             <h3 className="font-medium text-gray-800 mb-2">{item.title}</h3>
 //                             <div className="flex justify-between items-center mb-4">
-//                               <span className="text-red-500 font-bold">Rs. {item.price}</span>
+//                               <span className="text-primary-500 font-bold">Rs. {item.price}</span>
 //                             </div>
 //                             <div className="flex space-x-2">
 //                               <motion.button
 //                                 whileHover={{ scale: 1.02 }}
 //                                 whileTap={{ scale: 0.98 }}
 //                                 onClick={() => addToCart(item)}
-//                                 className="flex-1 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-center"
+//                                 className="flex-1 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors text-center"
 //                               >
 //                                 Add to Cart
 //                               </motion.button>
@@ -433,7 +433,7 @@
 //                     <motion.button
 //                       whileHover={{ scale: 1.02 }}
 //                       whileTap={{ scale: 0.98 }}
-//                       className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors flex items-center"
+//                       className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors flex items-center"
 //                     >
 //                       <span className="mr-1">+</span> Add New Address
 //                     </motion.button>
@@ -443,7 +443,7 @@
 //                     <div className="border border-gray-200 rounded-lg p-4 relative">
 //                       <div className="absolute top-4 right-4 flex space-x-2">
 //                         <button className="text-gray-500 hover:text-gray-700">Edit</button>
-//                         <button className="text-red-500 hover:text-red-700">Delete</button>
+//                         <button className="text-primary-500 hover:text-red-700">Delete</button>
 //                       </div>
 //                       <h3 className="font-medium text-gray-800 mb-1">Home</h3>
 //                       <p className="text-gray-600 mb-2">
@@ -461,7 +461,7 @@
 //                     <div className="border border-gray-200 rounded-lg p-4 relative">
 //                       <div className="absolute top-4 right-4 flex space-x-2">
 //                         <button className="text-gray-500 hover:text-gray-700">Edit</button>
-//                         <button className="text-red-500 hover:text-red-700">Delete</button>
+//                         <button className="text-primary-500 hover:text-red-700">Delete</button>
 //                       </div>
 //                       <h3 className="font-medium text-gray-800 mb-1">Work</h3>
 //                       <p className="text-gray-600 mb-2">
@@ -488,7 +488,7 @@
 //                     <motion.button
 //                       whileHover={{ scale: 1.02 }}
 //                       whileTap={{ scale: 0.98 }}
-//                       className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors flex items-center"
+//                       className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors flex items-center"
 //                     >
 //                       <span className="mr-1">+</span> Add New Card
 //                     </motion.button>
@@ -516,7 +516,7 @@
 //                       </div>
 //                     </div>
 
-//                     <div className="bg-gradient-to-r from-red-500 to-pink-500 rounded-xl p-6 text-white relative">
+//                     <div className="bg-gradient-to-r from-primary-500 to-pink-500 rounded-xl p-6 text-white relative">
 //                       <div className="absolute top-4 right-4 flex space-x-2">
 //                         <button className="text-white hover:text-gray-200">Edit</button>
 //                         <button className="text-white hover:text-gray-200">Delete</button>
@@ -552,7 +552,7 @@
 //                       </div>
 //                       <label className="relative inline-flex items-center cursor-pointer">
 //                         <input type="checkbox" className="sr-only peer" checked />
-//                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+//                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
 //                       </label>
 //                     </div>
 
@@ -563,7 +563,7 @@
 //                       </div>
 //                       <label className="relative inline-flex items-center cursor-pointer">
 //                         <input type="checkbox" className="sr-only peer" checked />
-//                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+//                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
 //                       </label>
 //                     </div>
 
@@ -574,7 +574,7 @@
 //                       </div>
 //                       <label className="relative inline-flex items-center cursor-pointer">
 //                         <input type="checkbox" className="sr-only peer" checked />
-//                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+//                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
 //                       </label>
 //                     </div>
 
@@ -585,7 +585,7 @@
 //                       </div>
 //                       <label className="relative inline-flex items-center cursor-pointer">
 //                         <input type="checkbox" className="sr-only peer" />
-//                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+//                         <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
 //                       </label>
 //                     </div>
 //                   </div>
@@ -894,7 +894,7 @@ const AccountPage = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-500"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary-500"></div>
       </div>
     )
   }
@@ -917,9 +917,9 @@ const AccountPage = () => {
           {/* Sidebar */}
           <div className="lg:w-1/4">
             <div className="bg-white rounded-xl shadow-md overflow-hidden">
-              <div className="p-6 bg-red-500 text-white">
+              <div className="p-6 bg-primary-500 text-white">
                 <div className="flex items-center">
-                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-red-500 font-bold text-xl">
+                  <div className="w-16 h-16 rounded-full bg-white flex items-center justify-center text-primary-500 font-bold text-xl">
                     {userData.firstName.charAt(0)}
                     {userData.lastName.charAt(0)}
                   </div>
@@ -940,7 +940,7 @@ const AccountPage = () => {
                       whileHover={{ x: 5 }}
                       onClick={() => setActiveTab(tab.id)}
                       className={`w-full flex items-center p-3 rounded-lg transition-colors ${
-                        activeTab === tab.id ? "bg-red-50 text-red-500 font-medium" : "text-gray-700 hover:bg-gray-100"
+                        activeTab === tab.id ? "bg-red-50 text-primary-500 font-medium" : "text-gray-700 hover:bg-gray-100"
                       }`}
                     >
                       <span className="mr-3">{tab.icon}</span>
@@ -952,7 +952,7 @@ const AccountPage = () => {
                     whileHover={{ x: 5 }}
                     className="w-full flex items-center p-3 rounded-lg text-gray-700 hover:bg-gray-100 transition-colors mt-4"
                   >
-                    <span className="mr-3 text-red-500">
+                    <span className="mr-3 text-primary-500">
                       <FaSignOutAlt />
                     </span>
                     Logout
@@ -978,7 +978,7 @@ const AccountPage = () => {
                           name="firstName"
                           value={userData.firstName}
                           onChange={handleFormChange}
-                          className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
                         />
                       </div>
                       <div>
@@ -988,7 +988,7 @@ const AccountPage = () => {
                           name="lastName"
                           value={userData.lastName}
                           onChange={handleFormChange}
-                          className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                          className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
                         />
                       </div>
                     </div>
@@ -1000,7 +1000,7 @@ const AccountPage = () => {
                         name="email"
                         value={userData.email}
                         onChange={handleFormChange}
-                        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
                       />
                     </div>
 
@@ -1011,7 +1011,7 @@ const AccountPage = () => {
                         name="phone"
                         value={userData.phone}
                         onChange={handleFormChange}
-                        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
                       />
                     </div>
 
@@ -1021,7 +1021,7 @@ const AccountPage = () => {
                         type="file"
                         name="image"
                         onChange={handleFormChange}
-                        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                        className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
                       />
                     </div>
 
@@ -1030,7 +1030,7 @@ const AccountPage = () => {
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         type="submit"
-                        className="bg-red-500 text-white rounded-lg py-3 px-6 hover:bg-red-600 transition-colors"
+                        className="bg-primary-500 text-white rounded-lg py-3 px-6 hover:bg-primary-600 transition-colors"
                       >
                         Save Changes
                       </motion.button>
@@ -1052,7 +1052,7 @@ const AccountPage = () => {
                       <p className="text-gray-500 mb-6">You haven't placed any orders yet.</p>
                       <Link
                         to="/restaurants"
-                        className="inline-block bg-red-500 text-white rounded-lg py-3 px-6 hover:bg-red-600 transition-colors"
+                        className="inline-block bg-primary-500 text-white rounded-lg py-3 px-6 hover:bg-primary-600 transition-colors"
                       >
                         Browse Restaurants
                       </Link>
@@ -1109,7 +1109,7 @@ const AccountPage = () => {
 
                             <div className="flex justify-between pt-4 border-t border-gray-200">
                               <span className="font-bold">Total</span>
-                              <span className="font-bold text-red-500">Rs. {order.total}</span>
+                              <span className="font-bold text-primary-500">Rs. {order.total}</span>
                             </div>
                           </div>
 
@@ -1118,7 +1118,7 @@ const AccountPage = () => {
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
                               onClick={() => viewOrderDetails(order.id)}
-                              className="px-4 py-2 border border-red-500 text-red-500 rounded-lg hover:bg-red-50 transition-colors"
+                              className="px-4 py-2 border border-primary-500 text-primary-500 rounded-lg hover:bg-red-50 transition-colors"
                             >
                               View Details
                             </motion.button>
@@ -1126,7 +1126,7 @@ const AccountPage = () => {
                               whileHover={{ scale: 1.02 }}
                               whileTap={{ scale: 0.98 }}
                               onClick={() => reorderItems(order)}
-                              className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+                              className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
                             >
                               Reorder
                             </motion.button>
@@ -1151,7 +1151,7 @@ const AccountPage = () => {
                       <p className="text-gray-500 mb-6">Add items to your wishlist to save them for later.</p>
                       <Link
                         to="/restaurants"
-                        className="inline-block bg-red-500 text-white rounded-lg py-3 px-6 hover:bg-red-600 transition-colors"
+                        className="inline-block bg-primary-500 text-white rounded-lg py-3 px-6 hover:bg-primary-600 transition-colors"
                       >
                         Browse Restaurants
                       </Link>
@@ -1175,14 +1175,14 @@ const AccountPage = () => {
                           <div className="p-4">
                             <h3 className="font-medium text-gray-800 mb-2">{item.title}</h3>
                             <div className="flex justify-between items-center mb-4">
-                              <span className="text-red-500 font-bold">Rs. {item.price}</span>
+                              <span className="text-primary-500 font-bold">Rs. {item.price}</span>
                             </div>
                             <div className="flex space-x-2">
                               <motion.button
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 onClick={() => addToCart(item)}
-                                className="flex-1 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors text-center"
+                                className="flex-1 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors text-center"
                               >
                                 Add to Cart
                               </motion.button>
@@ -1221,7 +1221,7 @@ const AccountPage = () => {
                         setEditingAddress(null)
                         setShowAddressForm(true)
                       }}
-                      className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors flex items-center"
+                      className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors flex items-center"
                     >
                       <FaPlus className="mr-1" /> Add New Address
                     </motion.button>
@@ -1264,7 +1264,7 @@ const AccountPage = () => {
                             name="type"
                             value={newAddress.type}
                             onChange={handleNewAddressChange}
-                            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
                           >
                             <option value="Home">Home</option>
                             <option value="Work">Work</option>
@@ -1280,7 +1280,7 @@ const AccountPage = () => {
                             value={newAddress.phone}
                             onChange={handleNewAddressChange}
                             placeholder="+92 300 1234567"
-                            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
                           />
                         </div>
 
@@ -1292,7 +1292,7 @@ const AccountPage = () => {
                             onChange={handleNewAddressChange}
                             placeholder="Street, Area, City, Country"
                             rows="3"
-                            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-red-500"
+                            className="w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:primary-500"
                           ></textarea>
                         </div>
 
@@ -1315,7 +1315,7 @@ const AccountPage = () => {
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
                             onClick={addNewAddress}
-                            className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+                            className="px-6 py-3 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
                           >
                             {editingAddress ? "Update Address" : "Save Address"}
                           </motion.button>
@@ -1332,7 +1332,7 @@ const AccountPage = () => {
                             </button>
                             <button
                               onClick={() => deleteAddress(address.id)}
-                              className="text-red-500 hover:text-red-700"
+                              className="text-primary-500 hover:text-red-700"
                             >
                               <FaTrash />
                             </button>
@@ -1367,7 +1367,7 @@ const AccountPage = () => {
                     <motion.button
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors flex items-center"
+                      className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors flex items-center"
                     >
                       <span className="mr-1">+</span> Add New Card
                     </motion.button>
@@ -1395,7 +1395,7 @@ const AccountPage = () => {
                       </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-red-500 to-pink-500 rounded-xl p-6 text-white relative">
+                    <div className="bg-gradient-to-r from-primary-500 to-pink-500 rounded-xl p-6 text-white relative">
                       <div className="absolute top-4 right-4 flex space-x-2">
                         <button className="text-white hover:text-gray-200">Edit</button>
                         <button className="text-white hover:text-gray-200">Delete</button>
@@ -1431,7 +1431,7 @@ const AccountPage = () => {
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" className="sr-only peer" checked />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
                       </label>
                     </div>
 
@@ -1442,7 +1442,7 @@ const AccountPage = () => {
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" className="sr-only peer" checked />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
                       </label>
                     </div>
 
@@ -1453,7 +1453,7 @@ const AccountPage = () => {
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" className="sr-only peer" checked />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
                       </label>
                     </div>
 
@@ -1464,7 +1464,7 @@ const AccountPage = () => {
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" className="sr-only peer" />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-red-500"></div>
+                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary-500"></div>
                       </label>
                     </div>
                   </div>

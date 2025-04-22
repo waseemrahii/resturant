@@ -41,6 +41,7 @@ const Carusal = () => {
       link: "/category/BBQ",
       color: "from-purple-600/80 to-indigo-500/80",
     },
+    
   ]
 
   // Check if device is mobile
@@ -123,7 +124,7 @@ const Carusal = () => {
           />
 
           {/* Gradient overlay */}
-          <div className={`absolute inset-0 bg-gradient-to-r ${items[currentIndex].color} opacity-80`}></div>
+          <div className={`absolute inset-0 bg-gradient-to-r ${items[currentIndex].color} opacity-50`}></div>
 
           {/* Content */}
           <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-4 z-10">
@@ -131,7 +132,7 @@ const Carusal = () => {
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-lg max-w-4xl"
+              className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-4 drop-shadow-sm max-w-4xl"
             >
               {items[currentIndex].title}
             </motion.h1>
@@ -150,7 +151,7 @@ const Carusal = () => {
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
             >
-              <Link to={items[currentIndex].link}>
+              {/* <Link to={items[currentIndex].link}>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -158,7 +159,7 @@ const Carusal = () => {
                 >
                   {items[currentIndex].cta}
                 </motion.button>
-              </Link>
+              </Link> */}
             </motion.div>
           </div>
         </motion.div>
@@ -171,7 +172,7 @@ const Carusal = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.8, duration: 0.5 }}
           className={`relative flex items-center bg-white rounded-full shadow-xl transition-all duration-300 ${
-            isSearchFocused ? "ring-2 ring-[#FF6637]" : ""
+            isSearchFocused ? "ring-2 ring-primary-500" : ""
           }`}
         >
           <div className="absolute left-4 text-gray-400">

@@ -35,7 +35,7 @@ const Offers = () => {
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-red-500"></div>
+        <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-primary-500"></div>
       </div>
     )
   }
@@ -60,7 +60,7 @@ const Offers = () => {
               onClick={() => setActiveTab(tab.id)}
               className={`flex items-center px-6 py-3 rounded-full transition-colors ${
                 activeTab === tab.id
-                  ? "bg-red-500 text-white shadow-md"
+                  ? "bg-primary-500 text-white shadow-md"
                   : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
               }`}
             >
@@ -82,7 +82,7 @@ const Offers = () => {
                 key={index}
                 className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
               >
-                <div className="h-48 bg-gradient-to-r from-red-500 to-red-600 relative">
+                <div className="h-48 bg-gradient-to-r from-primary-500 to-primary-600 relative">
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="text-center text-white">
                       <h3 className="text-3xl font-bold mb-2">{coupon.discount}% OFF</h3>
@@ -106,7 +106,7 @@ const Offers = () => {
                     <motion.button
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      className="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
+                      className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors"
                     >
                       Use Code
                     </motion.button>

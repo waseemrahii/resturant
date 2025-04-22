@@ -7,9 +7,10 @@ const CouponCard = ({ coupon }) => {
     <div className="container hover:shadow-md cursor-pointer rounded-xl overflow-hidden shadow-sm p-4 w-full my-4 border border-gray-200">
       <div className="relative flex flex-wrap items-center">
         <img
-          className="w-16 h-16 rounded-full object-cover bg-primary-100 mr-4 mb-4 md:mb-0"
-          src="/logo-e.png" // Replace with the actual path to your image
+          className="w-16 h-16 rounded-full  bg-primary-100 object-fill mr-4 mb-4 md:mb-0"
+          src="/logoemart.png" // Replace with the actual path to your image
           alt="Logo"
+        
         />
         <div className="flex-grow">
           <p className="text-black-600 text-md font-semibold mb-2">

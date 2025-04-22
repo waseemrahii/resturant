@@ -24,7 +24,7 @@
 // //             placeholder="Enter First Name"
 // //             {...register('firstName', { required: 'First Name is required' })}
 // //           />
-// //           {errors.firstName && <p className="text-red-500">{errors.firstName.message}</p>}
+// //           {errors.firstName && <p className="text-primary-500">{errors.firstName.message}</p>}
 
 // //           <label className="block text-gray-700">Last Name</label>
 // //           <input
@@ -33,7 +33,7 @@
 // //             placeholder="Enter Last Name"
 // //             {...register('lastName', { required: 'Last Name is required' })}
 // //           />
-// //           {errors.lastName && <p className="text-red-500">{errors.lastName.message}</p>}
+// //           {errors.lastName && <p className="text-primary-500">{errors.lastName.message}</p>}
 
 // //           <label className="block text-gray-700">Email Address</label>
 // //           <input
@@ -48,7 +48,7 @@
 // //               }
 // //             })}
 // //           />
-// //           {errors.email && <p className="text-red-500">{errors.email.message}</p>}
+// //           {errors.email && <p className="text-primary-500">{errors.email.message}</p>}
 
 // //           <label className="block text-gray-700">Phone Number</label>
 // //           <Controller
@@ -86,7 +86,7 @@
 // //               />
 // //             )}
 // //           />
-// //           {errors.phone && <p className="text-red-500">{errors.phone.message}</p>}
+// //           {errors.phone && <p className="text-primary-500">{errors.phone.message}</p>}
 
 // //           <label className="block text-gray-700 pt-2">Password</label>
 // //           <input
@@ -95,7 +95,7 @@
 // //             placeholder="Enter Password"
 // //             {...register('password', { required: 'Password is required' })}
 // //           />
-// //           {errors.password && <p className="text-red-500">{errors.password.message}</p>}
+// //           {errors.password && <p className="text-primary-500">{errors.password.message}</p>}
 
 // //           <label className="block text-gray-700 pt-2">Referral Code (optional)</label>
 // //           <input
@@ -153,7 +153,7 @@ import {
 import PhoneInput from "react-phone-input-2"
 import "react-phone-input-2/lib/style.css"
 import { Link } from "react-router-dom"
-import logo from "../../../public/logo-e.png"
+
 
 const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false)
@@ -169,14 +169,14 @@ const SignUp = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-800 to-gray-200 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-xl w-full rounded-2xl shadow-xl overflow-hidden">
         <div className="bg-gradient-to-r from-accent-primary to-accent-secondary py-6 px-8">
           <div className="flex justify-center">
-            <img src={logo || "/placeholder.svg"} alt="Foodie" className="h-16" />
+            <img src="/logoemart.png" alt="Foodie" className="h-16" />
           </div>
-          <h2 className="mt-4 text-center text-3xl font-extrabold text-white">Create Account</h2>
-          <p className="mt-2 text-center text-white text-opacity-80">Sign up to join the Foodie community</p>
+          <h2 className="mt-4 text-center text-3xl font-extrabold">Create Account</h2>
+          <p className="mt-2 text-center  text-opacity-80">Sign up to join the Foodie community</p>
         </div>
 
         <div className="p-8">
@@ -198,7 +198,7 @@ const SignUp = () => {
                     placeholder="First Name"
                   />
                 </div>
-                {errors.firstName && <p className="mt-1 text-sm text-red-600">{errors.firstName.message}</p>}
+                {errors.firstName && <p className="mt-1 text-sm text-primary-600">{errors.firstName.message}</p>}
               </div>
 
               <div>
@@ -217,7 +217,7 @@ const SignUp = () => {
                     placeholder="Last Name"
                   />
                 </div>
-                {errors.lastName && <p className="mt-1 text-sm text-red-600">{errors.lastName.message}</p>}
+                {errors.lastName && <p className="mt-1 text-sm text-primary-600">{errors.lastName.message}</p>}
               </div>
             </div>
 
@@ -243,7 +243,7 @@ const SignUp = () => {
                   placeholder="Email Address"
                 />
               </div>
-              {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>}
+              {errors.email && <p className="mt-1 text-sm text-primary-600">{errors.email.message}</p>}
             </div>
 
             <div>
@@ -277,7 +277,7 @@ const SignUp = () => {
                   />
                 )}
               />
-              {errors.phone && <p className="mt-1 text-sm text-red-600">{errors.phone.message}</p>}
+              {errors.phone && <p className="mt-1 text-sm text-primary-600">{errors.phone.message}</p>}
             </div>
 
             <div>
@@ -311,7 +311,7 @@ const SignUp = () => {
                   </button>
                 </div>
               </div>
-              {errors.password && <p className="mt-1 text-sm text-red-600">{errors.password.message}</p>}
+              {errors.password && <p className="mt-1 text-sm text-primary-600">{errors.password.message}</p>}
             </div>
 
             <div>
@@ -347,7 +347,7 @@ const SignUp = () => {
                 </Link>
               </label>
             </div>
-            {errors.terms && <p className="mt-1 text-sm text-red-600">{errors.terms.message}</p>}
+            {errors.terms && <p className="mt-1 text-sm text-primary-600">{errors.terms.message}</p>}
 
             <div>
               <button
@@ -374,7 +374,7 @@ const SignUp = () => {
                 type="button"
                 className="w-full flex justify-center items-center px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors"
               >
-                <FaGoogle className="h-5 w-5 text-red-500 mr-2" />
+                <FaGoogle className="h-5 w-5 text-primary-500 mr-2" />
                 Google
               </button>
               <button

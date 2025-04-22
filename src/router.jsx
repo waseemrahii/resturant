@@ -313,8 +313,11 @@
 import { createBrowserRouter } from "react-router-dom"
 import RootLayout from "./_root/RootLayout"
 import HomePage from "./_root/Pages/HomePage"
-import Login from "./_root/Pages/Login"
-import SignUp from "./_root/Pages/SignUp"
+// import Login from "./_root/Pages/Login"
+// import SignUp from "./_root/Pages/SignUp"
+import SignUp from "./components/SignUpPages/SignUp";
+import Login from "./components/SignUpPages/Login";
+
 import Forgotpassword from "./_root/Pages/Forgotpassword"
 import Loginwithphone from "./_root/Pages/Loginwithphone"
 import RestaurantsPage from "./_root/Pages/RestaurantsPage"
@@ -344,6 +347,7 @@ import OrderDetailPage from "./_root/Pages/OrderDetailPage"
 import AllRestaurants from "./components/Restaurants/AllRestaurants";
 import RequestDineIn from "./components/Restaurants/RequestDineIn";
  import Restaurants from "./components/Restaurants";
+import CategoryPage from "./_root/Pages/CategoryPage";
 
 const router = createBrowserRouter([
   {
@@ -382,12 +386,16 @@ const router = createBrowserRouter([
       {
         path: "restaurant/:restaurantId",
         element: <RestaurantsPage />,
-        children: [
-          {
-            path: "category/:categoryId",
-            element: <Restaurants />,
-          },
-        ],
+        // children: [
+        //   {
+        //     path: "category/:categoryId",
+        //     element: <Restaurants />,
+        //   },
+        // ],
+      },
+      {
+        path: "category/:categoryId",
+        element: <CategoryPage />,
       },
       {
         path: "search",
@@ -411,7 +419,7 @@ const router = createBrowserRouter([
       },
       {
         path: "categories",
-        element: <Categories />,
+        element: <CategoryPage />,
       },
       {
         path: "buy-gift-card",
@@ -441,10 +449,10 @@ const router = createBrowserRouter([
         path: "wishlist",
         element: <WishlistPage />,
       },
-      {
-        path: "product-detail/:id",
-        element: <ProductPage />,
-      },
+      // {
+      //   path: "product-detail/:id",
+      //   element: <ProductPage />,
+      // },
       // //       {
 // //         path: "my-dine-in-requests",
 // //         element: <RequestDineIn />,

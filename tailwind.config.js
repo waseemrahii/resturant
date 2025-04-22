@@ -96,8 +96,10 @@ const colors = {
     900: "#FF6637",
     800: "#FF7A51",
     700: "#FF8E6B",
-    600: "#FFA285",
-    500: "#FFB69F",
+    // 600: "#FFA285",
+    // 500: "#FFB69F",
+    600: "#005431",//green hover
+    500: "#02CD7F",//green
     400: "#FFCAB9",
     300: "#FFDED3",
     200: "#FFF2ED",
@@ -118,6 +120,7 @@ module.exports = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
+
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },

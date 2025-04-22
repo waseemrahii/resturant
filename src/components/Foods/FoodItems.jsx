@@ -1,65 +1,3 @@
-// import  { useState } from "react";
-// import PropTypes from "prop-types"; // Import PropTypes
-// import FoodCard from "./FoodCard";
-// import CategorySidebar from "../Restaurants/CategorySidebar";
-
-// const FoodItems = ({ categories, foods }) => {
-//   const [activeCategory, setActiveCategory] = useState("Italian");
-
-//   const handleCategorySelect = (category) => {
-//     setActiveCategory(category);
-//   };
-
-//   const filteredFoods = foods.filter(
-//     (food) => food.category === activeCategory
-//   );
-
-//   return (
-//     <div className="flex flex-col mx-auto ">
-//       <h1 className="text-4xl mb-8 border-b broder-gray-600 text-gray-700 p-6">
-//       {activeCategory} Restaurants
-//       </h1>
-//       <div className="flex flex-col lg:flex-row w-full mx-auto">
-//         <CategorySidebar
-//           categories={categories}
-//           onCategorySelect={handleCategorySelect}
-//         />
-//         <div className="flex-1 p-4">
-//           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-//           {filteredFoods.map((item) => (
-//           <FoodCard
-//             key={item.id}
-//             img={item.img}
-//             name={item.name}
-//             price={item.price}
-//             originalPrice={item.originalPrice}
-//             rating={item.rating}
-//             isVeg={item.isVeg}
-//           />
-//         ))}
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// FoodItems.propTypes = {
-//   // title: PropTypes.string.isRequired,
-//   categories: PropTypes.arrayOf(PropTypes.string).isRequired,
-//   foods: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       category: PropTypes.string.isRequired,
-//     })
-//   ).isRequired,
-// };
-
-// export default FoodItems;
-
-
-
-
-"use client"
 
 import { useState, useEffect } from "react"
 import PropTypes from "prop-types"
@@ -134,3 +72,78 @@ FoodItems.propTypes = {
 }
 
 export default FoodItems
+
+
+// import { useState } from "react"
+// import FoodCard from "./FoodCard"
+// import { Link } from "react-router-dom"
+// import PropTypes from "prop-types"
+
+// const FoodItems = ({ categories, foods, initialCategory }) => {
+//   const [activeCategory, setActiveCategory] = useState(initialCategory)
+
+//   // Filter foods by active category
+//   const filteredFoods = activeCategory === "All" ? foods : foods.filter((food) => food.category === activeCategory)
+
+//   return (
+//     <div className="my-10">
+//       <div className="flex justify-between items-center mb-6">
+//         <h2 className="text-2xl font-bold text-gray-800">Popular Food Items</h2>
+//         <Link to="/foods" className="text-red-500 hover:text-red-600 font-medium">
+//           See All
+//         </Link>
+//       </div>
+
+//       {/* Category tabs */}
+//       <div className="flex overflow-x-auto pb-4 mb-6 scrollbar-hide gap-2">
+//         <button
+//           onClick={() => setActiveCategory("All")}
+//           className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
+//             activeCategory === "All" ? "bg-red-500 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+//           }`}
+//         >
+//           All
+//         </button>
+//         {categories.map((category) => (
+//           <button
+//             key={category.id}
+//             onClick={() => setActiveCategory(category.name)}
+//             className={`px-4 py-2 rounded-full whitespace-nowrap transition-colors ${
+//               activeCategory === category.name ? "bg-red-500 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+//             }`}
+//           >
+//             {category.name}
+//           </button>
+//         ))}
+//       </div>
+
+//       {/* Food cards grid */}
+//       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+//         {filteredFoods.slice(0, 8).map((food) => (
+//           <Link key={food.id} to={`/product/${food.id}`} className="h-full">
+//             <div className="h-full" style={{ minHeight: "380px" }}>
+//               <FoodCard
+//                 id={food.id}
+//                 img={food.image}
+//                 name={food.name}
+//                 price={food.price}
+//                 originalPrice={food.originalPrice}
+//                 rating={food.rating}
+//                 reviews={food.reviews}
+//                 isVeg={food.isVeg}
+//               />
+//             </div>
+//           </Link>
+//         ))}
+//       </div>
+//     </div>
+//   )
+// }
+
+// FoodItems.propTypes = {
+//   categories: PropTypes.array.isRequired,
+//   foods: PropTypes.array.isRequired,
+//   initialCategory: PropTypes.string,
+// }
+
+// export default FoodItems
