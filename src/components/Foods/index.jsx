@@ -13,8 +13,6 @@
 // export default Foods
 
 
-"use client"
-
 import { useState } from "react"
 import { categories, foodItems } from "../../utils/Utils"
 import FoodItems from "./FoodItems"

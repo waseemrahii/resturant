@@ -349,6 +349,8 @@ import RequestDineIn from "./components/Restaurants/RequestDineIn";
  import Restaurants from "./components/Restaurants";
 import CategoryPage from "./_root/Pages/CategoryPage";
 import VendorRegistration from "./_root/Pages/VendorRegistration";
+import Terms from "./components/TermsConditions/Terms";
+import AboutPage from "./_root/Pages/AboutPage";
 
 const router = createBrowserRouter([
   {
@@ -410,6 +412,7 @@ const router = createBrowserRouter([
         path: "contact",
         element: <ContactUs />,
       },
+     
       {
         path: "favorite-food",
         element: <FavoriteFood />,
@@ -443,6 +446,10 @@ const router = createBrowserRouter([
         element: <Privacy />,
       },
       {
+        path: "about",
+        element: <AboutPage />,
+      },
+      {
         path: "terms-and-conditions",
         element: <TermsAndConditions />,
       },
@@ -450,10 +457,10 @@ const router = createBrowserRouter([
         path: "wishlist",
         element: <WishlistPage />,
       },
-      // {
-      //   path: "product-detail/:id",
-      //   element: <ProductPage />,
-      // },
+      {
+        path: "/cart/product-detail/",
+        element: <ProductPage />,
+      },
       // //       {
 // //         path: "my-dine-in-requests",
 // //         element: <RequestDineIn />,

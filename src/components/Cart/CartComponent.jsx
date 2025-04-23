@@ -291,13 +291,13 @@ const CartComponent = () => {
                       key={item.id}
                       className="flex flex-col sm:flex-row items-center sm:items-start border-b border-gray-200 pb-4"
                     >
-                      <div className="w-24 h-24 rounded-lg overflow-hidden mb-4 sm:mb-0 sm:mr-4">
+                      <Link to={'product-detail'} className="w-24 h-24 rounded-lg overflow-hidden mb-4 sm:mb-0 sm:mr-4">
                         <img
                           src={item.image || "/placeholder.svg"}
                           alt={item.title}
                           className="w-full h-full object-cover"
                         />
-                      </div>
+                      </Link>
                       <div className="flex-1">
                         <h3 className="font-medium text-gray-800 text-center sm:text-left">{item.title}</h3>
                         {item.size && (

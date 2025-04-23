@@ -6,8 +6,18 @@ import { IoLocationOutline } from "react-icons/io5"
 import { FaStar } from "react-icons/fa"
 
 const Card = ({ restaurant }) => {
+  const linkPath = restaurant?.id ? `/restaurant/${restaurant.id}` : '/product-detail';
+
   return (
-    <Link to={`/restaurant/${restaurant.id}`} state={{ restaurant }}>
+    // <Link to={`/restaurant/${restaurant.id}`} state={{ restaurant }}>
+    // set condition that if restaurant id is not available then go to product-detail  like link = if restaurant.id is not available then go to product-detail
+    // both metion like if id avaiableb then /restaurant/${restaurant.id} else /product-detail
+
+    <Link to={linkPath} state={{ restaurant }}>
+
+ 
+   
+
       <div className="relative hover:shadow-xl cursor-pointer rounded-xl overflow-hidden h-96 shadow-md p-0 w-full border-0 transition-all duration-300 transform hover:scale-105 bg-white">
         <div
           className={`absolute top-4 left-4 z-10 text-xs font-bold ${

@@ -102,7 +102,8 @@ const WishlistPage = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {wishlistItems.map((item) => (
-            <motion.div
+         <Link to={`/product-detail`} key={item.id}>'>
+         <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -131,6 +132,7 @@ const WishlistPage = () => {
                 </motion.button>
               </div>
             </motion.div>
+          </Link>
           ))}
         </div>
       )}

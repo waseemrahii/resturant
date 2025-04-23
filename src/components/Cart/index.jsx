@@ -199,12 +199,16 @@ const Cart = () => {
             <div className="divide-y divide-gray-200">
               {cartItems.map((item) => (
                 <div key={item.id} className="p-4 sm:p-6 flex flex-col sm:flex-row items-center">
+                  
                   <div className="w-full sm:w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 mb-4 sm:mb-0">
-                    <img
+                  
+
+                   <img
                       src={item.image || "/placeholder.svg"}
                       alt={item.title}
                       className="w-full h-full object-cover"
                     />
+                   
                   </div>
                   <div className="sm:ml-6 flex-grow">
                     <h3 className="font-medium text-gray-900">{item.title}</h3>

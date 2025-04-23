@@ -1,64 +1,143 @@
 
-import PropTypes from "prop-types"
-import { FaLocationDot } from "react-icons/fa6"
-import { FaStar } from "react-icons/fa"
-import { Link } from "react-router-dom"
 
-const RestaurantCard = ({ restaurant }) => {
-  const { id, status, imageUrl, name, location, rating, reviews } = restaurant
+
+import { useState, useEffect } from "react"
+import PropTypes from "prop-types"
+import { IoHomeOutline } from "react-icons/io5"
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa"
+import { allrestaurants } from "../../utils/Utils"
+import RestaurantCard from "../Search/RestaurantCard"
+
+const AllRestaurants = ({ title }) => {
+  const [currentPage, setCurrentPage] = useState(1)
+  const [loading, setLoading] = useState(true)
+  const restaurantsPerPage = 8
+
+  // Calculate total pages
+  const totalPages = Math.ceil(allrestaurants.length / restaurantsPerPage)
+
+  // Get current restaurants
+  const indexOfLastRestaurant = currentPage * restaurantsPerPage
+  const indexOfFirstRestaurant = indexOfLastRestaurant - restaurantsPerPage
+  const currentRestaurants = allrestaurants.slice(indexOfFirstRestaurant, indexOfLastRestaurant)
+
+  useEffect(() => {
+    // Simulate loading
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
+  }, [currentPage])
+
+  // Change page
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  const nextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+  const prevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1))
 
   return (
-    <Link to={`/restaurant/${id}`} className="block">
-      <div className="relative rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 bg-white h-full">
-        <div className="relative">
-          <img
-            className="w-full h-56 object-cover"
-            src={imageUrl || "/placeholder.svg"}
-            alt={name}
-            onError={(e) => {
-              e.target.onerror = null
-              e.target.src =
-                "https://images.unsplash.com/photo-1631515242808-497c3fbd3972?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-            }}
-          />
-          <span
-            className={`absolute top-3 left-3 text-white text-xs font-bold px-3 py-1 rounded-full ${
-              status === "Open" ? "bg-green-500" : "bg-red-500"
-            }`}
-          >
-            {status}
-          </span>
-          <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/70 to-transparent"></div>
-        </div>
-        <div className="p-5">
-          <div className="font-bold text-xl mb-2 text-gray-800">{name}</div>
-          <div className="flex items-center gap-2 text-gray-600 mb-3">
-            <FaLocationDot className="text-red-500" />
-            <span className="text-sm">{location}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center bg-green-500 text-white px-2 py-1 rounded-md">
-              <FaStar className="mr-1 text-yellow-300" />
-              <span>{rating.toFixed(1)}</span>
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl md:text-4xl font-bold mb-8 border-b border-gray-200 pb-4 text-gray-800">
+        {title} Restaurants
+      </h1>
+      <div className="py-4">
+        <button className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-lg transition-colors duration-300">
+          <IoHomeOutline className="text-lg" />
+          All Restaurants ({allrestaurants.length})
+        </button>
+        <div className="mt-8">
+          {loading ? (
+            <div className="flex justify-center items-center h-64">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-green-500"></div>
             </div>
-            <span className="text-gray-500 text-sm">({reviews} reviews)</span>
-          </div>
+          ) : allrestaurants.length === 0 ? (
+            <div className="flex flex-col items-center justify-center h-64">
+              <img src="/placeholder.svg?height=100&width=100" alt="No results" className="mb-4 opacity-50" />
+              <p className="text-xl font-bold text-gray-500">No restaurants found</p>
+              <p className="text-gray-400">Try adjusting your search criteria</p>
+            </div>
+          ) : (
+            <>
+              <div className="grid grid-cols-1 mt-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                {currentRestaurants.map((restaurant, index) => (
+                  <RestaurantCard key={index} restaurant={restaurant} />
+                ))}
+              </div>
+
+              {/* Pagination */}
+              {totalPages > 1 && (
+                <div className="flex justify-center mt-10">
+                  <nav className="flex items-center">
+                    <button
+                      onClick={prevPage}
+                      disabled={currentPage === 1}
+                      className={`px-3 py-1 rounded-l-md border ${
+                        currentPage === 1
+                          ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                          : "bg-white text-green-500 hover:bg-green-50"
+                      }`}
+                    >
+                      <FaChevronLeft className="text-sm" />
+                    </button>
+
+                    <div className="flex">
+                      {[...Array(totalPages).keys()].map((number) => {
+                        // Show limited page numbers with ellipsis
+                        if (
+                          number + 1 === 1 ||
+                          number + 1 === totalPages ||
+                          (number + 1 >= currentPage - 1 && number + 1 <= currentPage + 1)
+                        ) {
+                          return (
+                            <button
+                              key={number + 1}
+                              onClick={() => paginate(number + 1)}
+                              className={`px-3 py-1 border-t border-b ${
+                                currentPage === number + 1
+                                  ? "bg-green-500 text-white"
+                                  : "bg-white text-green-500 hover:bg-green-50"
+                              }`}
+                            >
+                              {number + 1}
+                            </button>
+                          )
+                        } else if (
+                          (number + 1 === currentPage - 2 && currentPage > 3) ||
+                          (number + 1 === currentPage + 2 && currentPage < totalPages - 2)
+                        ) {
+                          return (
+                            <span key={number + 1} className="px-3 py-1 border-t border-b bg-white text-gray-500">
+                              ...
+                            </span>
+                          )
+                        }
+                        return null
+                      })}
+                    </div>
+
+                    <button
+                      onClick={nextPage}
+                      disabled={currentPage === totalPages}
+                      className={`px-3 py-1 rounded-r-md border ${
+                        currentPage === totalPages
+                          ? "bg-gray-100 text-gray-400 cursor-not-allowed"
+                          : "bg-white text-green-500 hover:bg-green-50"
+                      }`}
+                    >
+                      <FaChevronRight className="text-sm" />
+                    </button>
+                  </nav>
+                </div>
+              )}
+            </>
+          )}
         </div>
       </div>
-    </Link>
+    </div>
   )
 }
 
-RestaurantCard.propTypes = {
-  restaurant: PropTypes.shape({
-    id: PropTypes.number,
-    status: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    location: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
-    reviews: PropTypes.number.isRequired,
-  }).isRequired,
+AllRestaurants.propTypes = {
+  title: PropTypes.string.isRequired,
 }
 
-export default RestaurantCard
+export default AllRestaurants

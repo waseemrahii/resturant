@@ -125,13 +125,14 @@ const ParentCard = ({ title, rest }) => {
           state={{ categoryName: title, isRestaurant: true }}
           className="flex items-center text-primary-500 hover:text-primary-600 transition-colors"
         >
-          <span className="mr-2 text-xl font-bold">See All</span>
+          <span className="mr-2 text-2xl font-bold">See All</span>
           <FaArrowRight className="text-sm" />
         </Link>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {rest.slice(0, 4).map((restaurant, index) => (
-          <Link key={index} to={`/restaurant/${restaurant.id || index}`}>
+          // <Link key={index} to={`/restaurant/${restaurant.id || index}`}>
+          <Link key={index} to={`/product-detail`}>
             <Card restaurant={restaurant} />
           </Link>
         ))}
