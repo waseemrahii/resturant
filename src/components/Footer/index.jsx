@@ -128,17 +128,17 @@ const Footer = () => {
                 <h3 className="font-bold text-lg mb-4">Quick Links</h3>
                 <ul className="space-y-3">
                   <li>
-                    <Link to="/vendor" className="text-gray-600 hover:text-green-500">
+                    <Link to="/vendor-registration" className="text-gray-600 hover:text-green-500">
                       Become a Vendor owner
                     </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/delivery" className="text-gray-600 hover:text-green-500">
                       Become a delivery man
                     </Link>
-                  </li>
+                  </li> */}
                   <li>
-                    <Link to="/support" className="text-gray-600 hover:text-green-500">
+                    <Link to="/contact" className="text-gray-600 hover:text-green-500">
                       Help & Support
                     </Link>
                   </li>
@@ -148,7 +148,7 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link to="/track-order" className="text-gray-600 hover:text-green-500">
+                    <Link to="/account" className="text-gray-600 hover:text-green-500">
                       Track Order
                     </Link>
                   </li>
@@ -162,13 +162,13 @@ const Footer = () => {
                   <div>
                     <h4 className="font-medium mb-2">Send Us Mails</h4>
                     <a href="mailto:support@6amtech.com" className="text-gray-600 hover:text-green-500">
-                      support@6amtech.com
+                      support@foodi.com
                     </a>
                   </div>
                   <div>
                     <h4 className="font-medium mb-2">Contact Us</h4>
                     <a href="tel:01700000000" className="text-gray-600 hover:text-green-500">
-                      01700000000
+                     034 000 0000
                     </a>
                   </div>
                 </div>
@@ -190,13 +190,13 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm mb-4 md:mb-0">2021-{year} 6amMart.</p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-              <Link to="/terms" className="text-gray-500 text-sm hover:text-green-500">
+              <Link to="/terms-and-conditions" className="text-gray-500 text-sm hover:text-green-500">
                 Terms & Conditions
               </Link>
               <Link to="/privacy" className="text-gray-500 text-sm hover:text-green-500">
                 Privacy Policy
               </Link>
-              <Link to="/refund" className="text-gray-500 text-sm hover:text-green-500">
+              {/* <Link to="/refund" className="text-gray-500 text-sm hover:text-green-500">
                 Refund Policy
               </Link>
               <Link to="/cancellation" className="text-gray-500 text-sm hover:text-green-500">
@@ -204,7 +204,7 @@ const Footer = () => {
               </Link>
               <Link to="/shipping" className="text-gray-500 text-sm hover:text-green-500">
                 Shipping Policy
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
