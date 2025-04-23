@@ -112,7 +112,7 @@ const RestaurantDetail = ({ restaurant }) => {
             <span>{openingHours}</span>
           </div>
           <div className="mt-2 text-right">
-            <span className={`px-3 py-1 rounded-full text-white ${status === "Open" ? "bg-green-500" : "bg-red-500"}`}>
+            <span className={`px-3 py-1 rounded-full text-white ${status === "Open" ? "bg-primary-500" : "bg-red-500"}`}>
               {status}
             </span>
           </div>
